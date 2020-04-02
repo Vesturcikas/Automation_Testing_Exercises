@@ -6,6 +6,7 @@ D:\C#\Automatinis_Testavimas\Automation_Testing_Exercises\NUnitTest_Selenium\bin
 D:\C#\Automatinis_Testavimas\Automation_Testing_Exercises\NUnitTest_Selenium\bin\Debug\netcoreapp3.1\NUnitTest_Selenium.runtimeconfig.json
 D:\C#\Automatinis_Testavimas\Automation_Testing_Exercises\NUnitTest_Selenium\bin\Debug\netcoreapp3.1\NUnitTest_Selenium.runtimeconfig.dev.json
 D:\C#\Automatinis_Testavimas\Automation_Testing_Exercises\NUnitTest_Selenium\bin\Debug\netcoreapp3.1\NUnitTest_Selenium.dll
+D:\C#\Automatinis_Testavimas\Automation_Testing_Exercises\NUnitTest_Selenium\bin\Debug\netcoreapp3.1\NUnitTest_Selenium.pdb
 D:\C#\Automatinis_Testavimas\Automation_Testing_Exercises\NUnitTest_Selenium\bin\Debug\netcoreapp3.1\Microsoft.VisualStudio.CodeCoverage.Shim.dll
 D:\C#\Automatinis_Testavimas\Automation_Testing_Exercises\NUnitTest_Selenium\bin\Debug\netcoreapp3.1\Microsoft.DotNet.InternalAbstractions.dll
 D:\C#\Automatinis_Testavimas\Automation_Testing_Exercises\NUnitTest_Selenium\bin\Debug\netcoreapp3.1\Microsoft.TestPlatform.CoreUtilities.dll
@@ -19,6 +20,8 @@ D:\C#\Automatinis_Testavimas\Automation_Testing_Exercises\NUnitTest_Selenium\bin
 D:\C#\Automatinis_Testavimas\Automation_Testing_Exercises\NUnitTest_Selenium\bin\Debug\netcoreapp3.1\Newtonsoft.Json.dll
 D:\C#\Automatinis_Testavimas\Automation_Testing_Exercises\NUnitTest_Selenium\bin\Debug\netcoreapp3.1\NuGet.Frameworks.dll
 D:\C#\Automatinis_Testavimas\Automation_Testing_Exercises\NUnitTest_Selenium\bin\Debug\netcoreapp3.1\nunit.framework.dll
+D:\C#\Automatinis_Testavimas\Automation_Testing_Exercises\NUnitTest_Selenium\bin\Debug\netcoreapp3.1\WebDriver.Support.dll
+D:\C#\Automatinis_Testavimas\Automation_Testing_Exercises\NUnitTest_Selenium\bin\Debug\netcoreapp3.1\WebDriver.dll
 D:\C#\Automatinis_Testavimas\Automation_Testing_Exercises\NUnitTest_Selenium\bin\Debug\netcoreapp3.1\System.Xml.XPath.XmlDocument.dll
 D:\C#\Automatinis_Testavimas\Automation_Testing_Exercises\NUnitTest_Selenium\bin\Debug\netcoreapp3.1\cs\Microsoft.TestPlatform.CoreUtilities.resources.dll
 D:\C#\Automatinis_Testavimas\Automation_Testing_Exercises\NUnitTest_Selenium\bin\Debug\netcoreapp3.1\cs\Microsoft.VisualStudio.TestPlatform.ObjectModel.resources.dll
@@ -86,13 +89,10 @@ D:\C#\Automatinis_Testavimas\Automation_Testing_Exercises\NUnitTest_Selenium\bin
 D:\C#\Automatinis_Testavimas\Automation_Testing_Exercises\NUnitTest_Selenium\bin\Debug\netcoreapp3.1\zh-Hant\Microsoft.TestPlatform.CrossPlatEngine.resources.dll
 D:\C#\Automatinis_Testavimas\Automation_Testing_Exercises\NUnitTest_Selenium\bin\Debug\netcoreapp3.1\zh-Hant\Microsoft.VisualStudio.TestPlatform.Common.resources.dll
 D:\C#\Automatinis_Testavimas\Automation_Testing_Exercises\NUnitTest_Selenium\obj\Debug\netcoreapp3.1\NUnitTest_Selenium.csprojAssemblyReference.cache
+D:\C#\Automatinis_Testavimas\Automation_Testing_Exercises\NUnitTest_Selenium\obj\Debug\netcoreapp3.1\NUnitTest_Selenium.csproj.CoreCompileInputs.cache
 D:\C#\Automatinis_Testavimas\Automation_Testing_Exercises\NUnitTest_Selenium\obj\Debug\netcoreapp3.1\NUnitTest_Selenium.AssemblyInfoInputs.cache
 D:\C#\Automatinis_Testavimas\Automation_Testing_Exercises\NUnitTest_Selenium\obj\Debug\netcoreapp3.1\NUnitTest_Selenium.AssemblyInfo.cs
 D:\C#\Automatinis_Testavimas\Automation_Testing_Exercises\NUnitTest_Selenium\obj\Debug\netcoreapp3.1\NUnitTest_Selenium.csproj.CopyComplete
-D:\C#\Automatinis_Testavimas\Automation_Testing_Exercises\NUnitTest_Selenium\obj\Debug\netcoreapp3.1\NUnitTest_Selenium.genruntimeconfig.cache
-D:\C#\Automatinis_Testavimas\Automation_Testing_Exercises\NUnitTest_Selenium\bin\Debug\netcoreapp3.1\WebDriver.dll
-D:\C#\Automatinis_Testavimas\Automation_Testing_Exercises\NUnitTest_Selenium\bin\Debug\netcoreapp3.1\WebDriver.Support.dll
-D:\C#\Automatinis_Testavimas\Automation_Testing_Exercises\NUnitTest_Selenium\bin\Debug\netcoreapp3.1\NUnitTest_Selenium.pdb
-D:\C#\Automatinis_Testavimas\Automation_Testing_Exercises\NUnitTest_Selenium\obj\Debug\netcoreapp3.1\NUnitTest_Selenium.csproj.CoreCompileInputs.cache
 D:\C#\Automatinis_Testavimas\Automation_Testing_Exercises\NUnitTest_Selenium\obj\Debug\netcoreapp3.1\NUnitTest_Selenium.dll
 D:\C#\Automatinis_Testavimas\Automation_Testing_Exercises\NUnitTest_Selenium\obj\Debug\netcoreapp3.1\NUnitTest_Selenium.pdb
+D:\C#\Automatinis_Testavimas\Automation_Testing_Exercises\NUnitTest_Selenium\obj\Debug\netcoreapp3.1\NUnitTest_Selenium.genruntimeconfig.cache

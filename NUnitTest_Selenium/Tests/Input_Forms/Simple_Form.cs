@@ -3,7 +3,7 @@ using OpenQA.Selenium;
 
 namespace NUnitTest_Selenium.Tests.Input_Forms
 {
-    class Simple_Form : BaseTest
+    public class Simple_Form : BaseTest
     {
         private IWebElement userMessageInput => driver.FindElement(By.Id("user-message"));
         private IWebElement buttonShowMessage => driver.FindElement(By.CssSelector("#get-input > button"));

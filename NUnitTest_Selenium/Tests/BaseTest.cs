@@ -4,10 +4,10 @@ using NUnit.Framework;
 
 namespace NUnitTest_Selenium.Tests
 {
-    class BaseTest
+    public class BaseTest
     {
-        public IWebDriver driver;
-        public string baseUrl;
+        protected IWebDriver driver;
+        protected string baseUrl;
 
         [SetUp]
         public void BeforeEveryTests()

@@ -92,3 +92,7 @@ D:\C#\Automatinis_Testavimas\Automation_Testing_Exercises\NUnitTest_Selenium\obj
 D:\C#\Automatinis_Testavimas\Automation_Testing_Exercises\NUnitTest_Selenium\obj\Debug\netcoreapp3.1\NUnitTest_Selenium.genruntimeconfig.cache
 D:\C#\Automatinis_Testavimas\Automation_Testing_Exercises\NUnitTest_Selenium\bin\Debug\netcoreapp3.1\WebDriver.dll
 D:\C#\Automatinis_Testavimas\Automation_Testing_Exercises\NUnitTest_Selenium\bin\Debug\netcoreapp3.1\WebDriver.Support.dll
+D:\C#\Automatinis_Testavimas\Automation_Testing_Exercises\NUnitTest_Selenium\bin\Debug\netcoreapp3.1\NUnitTest_Selenium.pdb
+D:\C#\Automatinis_Testavimas\Automation_Testing_Exercises\NUnitTest_Selenium\obj\Debug\netcoreapp3.1\NUnitTest_Selenium.csproj.CoreCompileInputs.cache
+D:\C#\Automatinis_Testavimas\Automation_Testing_Exercises\NUnitTest_Selenium\obj\Debug\netcoreapp3.1\NUnitTest_Selenium.dll
+D:\C#\Automatinis_Testavimas\Automation_Testing_Exercises\NUnitTest_Selenium\obj\Debug\netcoreapp3.1\NUnitTest_Selenium.pdb

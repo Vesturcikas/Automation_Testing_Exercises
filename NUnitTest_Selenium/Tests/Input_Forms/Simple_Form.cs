@@ -1,12 +1,13 @@
 ﻿using NUnit.Framework;
-using OpenQA.Selenium;
 using NUnitTest_Selenium.Pages;
+using NUnitTest_Selenium.AssertsPages;
 
 namespace NUnitTest_Selenium.Tests.Input_Forms
 {
     public class Simple_Form : BaseTest
     {      
         private SimpleFormPage simpleFormPage;
+        private SimpleFormAssertsPage simpleFormAssertsPage;
             
         [SetUp]
         public void BeforeTest()
@@ -14,6 +15,7 @@ namespace NUnitTest_Selenium.Tests.Input_Forms
             string testUrl = baseUrl + "/basic-first-form-demo.html";
             driver.Navigate().GoToUrl(testUrl);
             simpleFormPage = new SimpleFormPage(driver);
+            simpleFormAssertsPage = new SimpleFormAssertsPage(driver);
         }
 
         /// <summary>
@@ -28,8 +30,7 @@ namespace NUnitTest_Selenium.Tests.Input_Forms
             string text1 = "Hello, this is user message.";
 
             simpleFormPage.InputText(text1);
-
-            Assert.AreEqual(text1, simpleFormPage.userMessageShow.Text);
+            simpleFormAssertsPage.AssertUserMessageText(text1);            
         }
 
         /// <summary>
@@ -47,8 +48,7 @@ namespace NUnitTest_Selenium.Tests.Input_Forms
             string resultat = "12";
 
             simpleFormPage.AddTwoNumbers(a, b);
-
-            Assert.AreEqual(resultat, simpleFormPage.displayValue.Text);
+            simpleFormAssertsPage.AssertDispayedValue(resultat);            
         }
 
         [TearDown]

@@ -1,6 +1,7 @@
 ﻿using OpenQA.Selenium;
 using System.Collections.Generic;
 
+
 namespace NUnitTest_Selenium.Pages
 {
     public class CheckboxPage : BasePage
@@ -10,10 +11,7 @@ namespace NUnitTest_Selenium.Pages
         private IWebElement message => driver.FindElement(By.Id("txtAge"));
         public IWebElement buttonCheck => driver.FindElement(By.Id("check1"));
 
-        public CheckboxPage (IWebDriver driver) : base(driver)
-        {
-            this.driver = driver;
-        }
+        public CheckboxPage (IWebDriver driver) : base(driver) { }
 
         public CheckboxPage SingleCheckboxCheck()
         {

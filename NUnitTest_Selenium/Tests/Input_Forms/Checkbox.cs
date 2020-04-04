@@ -38,8 +38,7 @@ namespace NUnitTest_Selenium.Tests.Input_Forms
         /// </summary>
         [Test]
         public void MultipleCheckbox()
-        {
-            
+        {            
             string tekstas1 = "Uncheck All";
             string tekstas2 = "Check All";
             int i = 3;
@@ -48,7 +47,7 @@ namespace NUnitTest_Selenium.Tests.Input_Forms
 
             Assert.AreEqual(tekstas1, checkboxPage.buttonCheck.GetAttribute("value"));
 
-            checkboxPage.checkboxElementList[3].Click();
+            checkboxPage.CheckOneCheckbox(i);
 
             Assert.AreEqual(tekstas2, checkboxPage.buttonCheck.GetAttribute("value"));
         }

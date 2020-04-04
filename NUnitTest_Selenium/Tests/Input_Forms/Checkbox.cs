@@ -1,19 +1,19 @@
 ﻿using NUnit.Framework;
 using OpenQA.Selenium;
+using NUnitTest_Selenium.Pages;
 
 namespace NUnitTest_Selenium.Tests.Input_Forms
 {
     public class Checkbox : BaseTest
     {
-        private IWebElement checkboxSingle => driver.FindElement(By.Id("isAgeSelected"));
-        private IWebElement message => driver.FindElement(By.Id("txtAge"));
-        private IWebElement buttonCheck => driver.FindElement(By.Id("check1"));        
+        private CheckboxPage checkboxPage;
 
         [SetUp]
         public void BeforeTests()
         {
             string testUrl = baseUrl + "/basic-checkbox-demo.html";
             driver.Navigate().GoToUrl(testUrl);
+            checkboxPage = new CheckboxPage(driver);
         }
 
         /// <summary>
@@ -24,9 +24,9 @@ namespace NUnitTest_Selenium.Tests.Input_Forms
         [Test]
         public void SingleCheckbox()
         {
-            checkboxSingle.Click();
+            checkboxPage.SingleCheckboxCheck();
 
-            Assert.IsTrue(checkboxSingle.Selected);           
+            Assert.IsTrue(checkboxPage.checkboxSingle.Selected);           
         }
 
         /// <summary>
@@ -39,17 +39,18 @@ namespace NUnitTest_Selenium.Tests.Input_Forms
         [Test]
         public void MultipleCheckbox()
         {
-            var checkboxElementList = driver.FindElements(By.CssSelector("input.cb1-element"));
+            
             string tekstas1 = "Uncheck All";
             string tekstas2 = "Check All";
+            int i = 3;
 
-            buttonCheck.Click();
+            checkboxPage.CheckAll();               
 
-            Assert.AreEqual(tekstas1, buttonCheck.GetAttribute("value"));
+            Assert.AreEqual(tekstas1, checkboxPage.buttonCheck.GetAttribute("value"));
 
-            checkboxElementList[3].Click();
+            checkboxPage.checkboxElementList[3].Click();
 
-            Assert.AreEqual(tekstas2, buttonCheck.GetAttribute("value"));
+            Assert.AreEqual(tekstas2, checkboxPage.buttonCheck.GetAttribute("value"));
         }
 
         [TearDown]

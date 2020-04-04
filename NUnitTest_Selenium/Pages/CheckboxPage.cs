@@ -6,10 +6,9 @@ namespace NUnitTest_Selenium.Pages
 {
     public class CheckboxPage : BasePage
     {
-        public IWebElement checkboxSingle => driver.FindElement(By.Id("isAgeSelected"));
-        public IList<IWebElement> checkboxElementList => driver.FindElements(By.CssSelector("input.cb1-element"));
-        private IWebElement message => driver.FindElement(By.Id("txtAge"));
-        public IWebElement buttonCheck => driver.FindElement(By.Id("check1"));
+        private IWebElement checkboxSingle => driver.FindElement(By.Id("isAgeSelected"));
+        private IList<IWebElement> checkboxElementList => driver.FindElements(By.CssSelector("input.cb1-element"));        
+        private IWebElement buttonCheck => driver.FindElement(By.Id("check1"));
 
         public CheckboxPage (IWebDriver driver) : base(driver) { }
 

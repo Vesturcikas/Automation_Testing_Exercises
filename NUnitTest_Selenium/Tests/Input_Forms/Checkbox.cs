@@ -1,12 +1,14 @@
 ﻿using NUnit.Framework;
 using OpenQA.Selenium;
 using NUnitTest_Selenium.Pages;
+using NUnitTest_Selenium.AssertsPages;
 
 namespace NUnitTest_Selenium.Tests.Input_Forms
 {
     public class Checkbox : BaseTest
     {
         private CheckboxPage checkboxPage;
+        private CheckboxAssertsPage checkboxAssertsPage;
 
         [SetUp]
         public void BeforeTests()
@@ -14,6 +16,7 @@ namespace NUnitTest_Selenium.Tests.Input_Forms
             string testUrl = baseUrl + "/basic-checkbox-demo.html";
             driver.Navigate().GoToUrl(testUrl);
             checkboxPage = new CheckboxPage(driver);
+            checkboxAssertsPage = new CheckboxAssertsPage(driver);
         }
 
         /// <summary>
@@ -25,8 +28,7 @@ namespace NUnitTest_Selenium.Tests.Input_Forms
         public void SingleCheckbox()
         {
             checkboxPage.SingleCheckboxCheck();
-
-            Assert.IsTrue(checkboxPage.checkboxSingle.Selected);           
+            checkboxAssertsPage.AssertIsCheckboxSelected();                 
         }
 
         /// <summary>
@@ -43,13 +45,10 @@ namespace NUnitTest_Selenium.Tests.Input_Forms
             string tekstas2 = "Check All";
             int i = 3;
 
-            checkboxPage.CheckAll();               
-
-            Assert.AreEqual(tekstas1, checkboxPage.buttonCheck.GetAttribute("value"));
-
+            checkboxPage.CheckAll();
+            checkboxAssertsPage.AssertCheckboxButton(tekstas1);       
             checkboxPage.CheckOneCheckbox(i);
-
-            Assert.AreEqual(tekstas2, checkboxPage.buttonCheck.GetAttribute("value"));
+            checkboxAssertsPage.AssertCheckboxButton(tekstas2);            
         }
 
         [TearDown]

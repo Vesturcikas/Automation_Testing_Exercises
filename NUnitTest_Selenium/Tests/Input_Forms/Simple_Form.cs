@@ -1,23 +1,19 @@
 ﻿using NUnit.Framework;
 using OpenQA.Selenium;
+using NUnitTest_Selenium.Pages;
 
 namespace NUnitTest_Selenium.Tests.Input_Forms
 {
     public class Simple_Form : BaseTest
-    {
-        private IWebElement userMessageInput => driver.FindElement(By.Id("user-message"));
-        private IWebElement buttonShowMessage => driver.FindElement(By.CssSelector("#get-input > button"));
-        private IWebElement userMessageShow => driver.FindElement(By.CssSelector("#user-message > #display"));
-        private IWebElement firstNum => driver.FindElement(By.Id("sum1"));
-        private IWebElement secondNum => driver.FindElement(By.Id("sum2"));
-        private IWebElement buttonGetTotal => driver.FindElement(By.CssSelector("#gettotal > button"));
-        private IWebElement displayValue => driver.FindElement(By.Id("displayvalue"));
-
+    {      
+        private SimpleFormPage simpleFormPage;
+            
         [SetUp]
         public void BeforeTest()
         {
             string testUrl = baseUrl + "/basic-first-form-demo.html";
             driver.Navigate().GoToUrl(testUrl);
+            simpleFormPage = new SimpleFormPage(driver);
         }
 
         /// <summary>
@@ -29,10 +25,11 @@ namespace NUnitTest_Selenium.Tests.Input_Forms
         [Test]
         public void SingleInputField()
         {
-            userMessageInput.SendKeys("Hello, this is user message.");
-            buttonShowMessage.Click();
+            string text1 = "Hello, this is user message.";
 
-            Assert.AreEqual("Hello, this is user message.", userMessageShow.Text);
+            simpleFormPage.InputText(text1);
+
+            Assert.AreEqual(text1, simpleFormPage.userMessageShow.Text);
         }
 
         /// <summary>
@@ -45,11 +42,13 @@ namespace NUnitTest_Selenium.Tests.Input_Forms
         [Test]
         public void TwoInputFields()
         {
-            firstNum.SendKeys("5");
-            secondNum.SendKeys("7");
-            buttonGetTotal.Click();
+            string a = "5";
+            string b = "7";
+            string resultat = "12";
 
-            Assert.AreEqual("12", displayValue.Text);
+            simpleFormPage.AddTwoNumbers(a, b);
+
+            Assert.AreEqual(resultat, simpleFormPage.displayValue.Text);
         }
 
         [TearDown]

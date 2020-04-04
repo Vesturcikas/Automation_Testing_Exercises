@@ -1,25 +1,24 @@
 ﻿using NUnit.Framework;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Support.UI;
-using System;
 using System.Threading;
 
 namespace NUnitTest_Selenium.Tests.Input_Forms
 {
     public class Input_Form_Validations : BaseTest
     {
-        private IWebElement firstname => driver.FindElement(By.Name("first_name"));
-        private IWebElement lastname => driver.FindElement(By.Name("last_name"));
-        private IWebElement email => driver.FindElement(By.Name("email"));
-        private IWebElement phone => driver.FindElement(By.Name("phone"));
-        private IWebElement address => driver.FindElement(By.Name("address"));
-        private IWebElement city => driver.FindElement(By.Name("city"));
-        private IWebElement state => driver.FindElement(By.Name("state"));
-        private IWebElement zip => driver.FindElement(By.Name("zip"));
-        private IWebElement website => driver.FindElement(By.Name("website"));
-        private IWebElement hosting => driver.FindElement(By.Name("hosting"));
-        private IWebElement comment => driver.FindElement(By.Name("comment"));
-        private IWebElement sendButton => driver.FindElement(By.CssSelector(".btn"));
+        IWebElement firstname => driver.FindElement(By.Name("first_name"));
+        IWebElement lastname => driver.FindElement(By.Name("last_name"));
+        IWebElement email => driver.FindElement(By.Name("email"));
+        IWebElement phone => driver.FindElement(By.Name("phone"));
+        IWebElement address => driver.FindElement(By.Name("address"));
+        IWebElement city => driver.FindElement(By.Name("city"));
+        IWebElement state => driver.FindElement(By.Name("state"));
+        IWebElement zip => driver.FindElement(By.Name("zip"));
+        IWebElement website => driver.FindElement(By.Name("website"));
+        IWebElement hosting => driver.FindElement(By.Name("hosting"));
+        IWebElement comment => driver.FindElement(By.Name("comment"));
+        IWebElement sendButton => driver.FindElement(By.CssSelector(".btn"));
 
         [SetUp]
         public void BeforeTests()

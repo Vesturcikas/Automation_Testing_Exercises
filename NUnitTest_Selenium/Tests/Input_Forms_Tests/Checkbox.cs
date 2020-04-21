@@ -1,5 +1,4 @@
 ﻿using NUnit.Framework;
-using OpenQA.Selenium;
 using NUnitTest_Selenium.Pages;
 using NUnitTest_Selenium.AssertsPages;
 

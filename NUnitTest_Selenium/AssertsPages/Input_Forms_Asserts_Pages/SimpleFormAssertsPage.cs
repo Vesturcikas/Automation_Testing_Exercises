@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using NUnitTest_Selenium.Pages;
+﻿using NUnitTest_Selenium.Pages;
 using OpenQA.Selenium;
 using NUnit.Framework;
 

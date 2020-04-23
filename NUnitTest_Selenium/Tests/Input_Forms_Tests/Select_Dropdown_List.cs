@@ -1,25 +1,23 @@
 ﻿using OpenQA.Selenium;
 using NUnit.Framework;
 using OpenQA.Selenium.Support.UI;
+using NUnitTest_Selenium.Pages.Inputs_Forms_Pages;
+using NUnitTest_Selenium.AssertsPages.Input_Forms_Asserts_Pages;
 
 namespace NUnitTest_Selenium.Tests.Input_Forms
 {
     public class Select_Dropdown_List : BaseTest
     {
-        private IWebElement selectList => driver.FindElement(By.Id("select-demo"));        
-        private IWebElement messageFromSelectList => driver.FindElement(By.ClassName("selected-value"));
-        private IWebElement multiSelectList => driver.FindElement(By.Id("multi-select"));
-        private IWebElement buttonFirst => driver.FindElement(By.Id("printMe"));
-        private IWebElement buttonAll => driver.FindElement(By.Id("printAll"));
-        private IWebElement messageFromMultiList => driver.FindElement(By.CssSelector(".getall-selected"));
-
-       
+        private SelectDropDownPage dropDownPage;
+        private SelectDropDownAssertsPage dropDownAssertsPage;
 
         [SetUp]
         public void BeforeTests()
         {
             string testUrl = baseUrl + "/basic-select-dropdown-demo.html";
             driver.Navigate().GoToUrl(testUrl);
+            dropDownPage = new SelectDropDownPage(driver);
+            dropDownAssertsPage = new SelectDropDownAssertsPage(driver);
         }
 
         /// <summary>
@@ -32,11 +30,11 @@ namespace NUnitTest_Selenium.Tests.Input_Forms
         {
             string selectText = "Wednesday";
 
-            selectList.Click();
-            new SelectElement(selectList).SelectByText(selectText);
+            dropDownPage
+                .SelectListCklick()
+                .SelectListSelectElement(selectText);
 
-            Assert.AreEqual("Day selected :- Wednesday", messageFromSelectList.Text);
-            Assert.IsTrue(messageFromSelectList.Text.Contains("Wednesday"));
+            dropDownAssertsPage.AssertMessageFromSelectList(selectText);            
         }
 
         /// <summary>
@@ -47,34 +45,24 @@ namespace NUnitTest_Selenium.Tests.Input_Forms
         [Test]
         public void MultiSelectList()
         {
-            new SelectElement(multiSelectList).SelectByText("Texas");
-            /*
-            act.KeyDown(Keys.Control);
-            act.MoveToElement(multiSelectList.FindElement(By.CssSelector("[value='Texas']"))).Click();
-            act.KeyUp(Keys.Control);
-            act.Build().Perform();
-            */
-            buttonFirst.Click();
+            string selectText = "Texas";
+            string selectText1 = "Texas,Florida,New York";
 
-            Assert.IsTrue(messageFromMultiList.Text.Contains("Texas"));
+            dropDownPage
+                .MultiSelectListSelectElement(selectText)
+                .ButtonFirstClick();
+            dropDownAssertsPage.AssertMessageFromMultiSelectList(selectText);            
 
-            buttonAll.Click();
-
-            Assert.IsTrue(messageFromMultiList.Text.Contains("Texas"));
-                        
+            dropDownPage.ButtonAllClick();
+            dropDownAssertsPage.AssertMessageFromMultiSelectList(selectText);
             
-            act.KeyDown(Keys.Control);
-            act.MoveToElement(multiSelectList.FindElement(By.CssSelector("[value='Florida']"))).Click();
-            act.MoveToElement(multiSelectList.FindElement(By.CssSelector("[value='New York']"))).Click();
-            act.KeyUp(Keys.Control);
-            act.Build().Perform();
-            buttonFirst.Click();
+            dropDownPage
+                .MultiSelect()
+                .ButtonFirstClick();
+            dropDownAssertsPage.AssertMessageFromMultiSelectList(selectText);
 
-            Assert.IsTrue(messageFromMultiList.Text.Contains("Texas"));
-
-            buttonAll.Click();
-
-            Assert.IsTrue(messageFromMultiList.Text.Contains("Texas,Florida,New York"));
+            dropDownPage.ButtonAllClick();
+            dropDownAssertsPage.AssertMessageFromMultiSelectList(selectText1);
         }
 
         [TearDown]

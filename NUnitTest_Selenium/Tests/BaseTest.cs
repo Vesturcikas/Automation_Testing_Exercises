@@ -8,17 +8,14 @@ namespace NUnitTest_Selenium.Tests
     public class BaseTest
     {
         protected IWebDriver driver;
-        protected string baseUrl;
-        protected Actions act;
+        protected string baseUrl;        
 
         [SetUp]
         public void BeforeEveryTests()
         {
             driver = new ChromeDriver();
             driver.Manage().Window.Maximize();
-            baseUrl = "https://www.seleniumeasy.com/test";
-
-            act = new Actions(driver);
+            baseUrl = "https://www.seleniumeasy.com/test";           
         }
 
         [TearDown]

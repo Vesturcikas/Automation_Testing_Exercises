@@ -1,7 +1,6 @@
 ﻿using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
 using NUnit.Framework;
-using OpenQA.Selenium.Interactions;
 
 namespace NUnitTest_Selenium.Tests
 {
@@ -15,7 +14,7 @@ namespace NUnitTest_Selenium.Tests
         {
             driver = new ChromeDriver();
             driver.Manage().Window.Maximize();
-            baseUrl = "https://www.seleniumeasy.com/test";           
+            baseUrl = "https://www.seleniumeasy.com/test";             
         }
 
         [TearDown]

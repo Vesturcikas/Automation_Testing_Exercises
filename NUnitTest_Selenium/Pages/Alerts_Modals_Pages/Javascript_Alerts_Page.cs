@@ -7,9 +7,9 @@ namespace NUnitTest_Selenium.Pages.Alerts_Modals_Pages
 {
     public class Javascript_Alerts_Page : BasePage
     {
-        IWebElement jsAlertBoxButton => driver.FindElement(By.CssSelector("button[onclick='myAlertFunction()']"));
-        IWebElement jsConfirmBoxButton => driver.FindElement(By.CssSelector("button[onclick='myConfirmFunction()']"));
-        IWebElement jsPromptBoxButton => driver.FindElement(By.CssSelector("button[onclick='myPromptFunction()']"));
+        private IWebElement jsAlertBoxButton => driver.FindElement(By.CssSelector("button[onclick='myAlertFunction()']"));
+        private IWebElement jsConfirmBoxButton => driver.FindElement(By.CssSelector("button[onclick='myConfirmFunction()']"));
+        private IWebElement jsPromptBoxButton => driver.FindElement(By.CssSelector("button[onclick='myPromptFunction()']"));
 
         public Javascript_Alerts_Page(IWebDriver driver) : base(driver) { }
 

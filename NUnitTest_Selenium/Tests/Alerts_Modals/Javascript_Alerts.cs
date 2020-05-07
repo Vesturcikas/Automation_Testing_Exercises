@@ -1,8 +1,5 @@
 ﻿using NUnit.Framework;
 using System;
-using System.Threading;
-using System.Collections.Generic;
-using System.Text;
 using NUnitTest_Selenium.AssertsPages.Alerts_Modals_Asserts_Pages;
 using NUnitTest_Selenium.Pages.Alerts_Modals_Pages;
 using OpenQA.Selenium;
@@ -31,6 +28,7 @@ namespace NUnitTest_Selenium.Tests.Alerts_Modals
         /// When an alert box pops up, user have to click "OK" button to proceed.
         /// </summary>
         [Test]
+        [Obsolete]
         public void AlertBoxTest()
         {
             string trueText = "I am an alert box!";
@@ -53,6 +51,7 @@ namespace NUnitTest_Selenium.Tests.Alerts_Modals
         /// When a confirm box pops up, user can click "OK" or "Cancel" to proceed.
         /// </summary>
         [Test]
+        [Obsolete]
         public void ConfirmBoxTest()
         {
             string trueText = "Press a button!";
@@ -83,6 +82,7 @@ namespace NUnitTest_Selenium.Tests.Alerts_Modals
         }
 
         [Test]
+        [Obsolete]
         public void PromptBoxTestOK()
         {
             string trueText = "Please enter your name";

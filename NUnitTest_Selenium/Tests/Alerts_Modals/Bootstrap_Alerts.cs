@@ -10,8 +10,7 @@ namespace NUnitTest_Selenium.Tests.Alerts_Modals
     public class Bootstrap_Alerts:BaseTest
     {
         private Bootstrap_Alerts_Page bootstrapAlertsPage;
-        private Bootstrap_Alerts_Asserts_Page bootstrapAlertsAssertsPage;
-        private WebDriverWait wait;
+        private Bootstrap_Alerts_Asserts_Page bootstrapAlertsAssertsPage;        
 
         [SetUp]
         public void BeforeTests()
@@ -19,8 +18,7 @@ namespace NUnitTest_Selenium.Tests.Alerts_Modals
             string testUrl = baseUrl + "/bootstrap-alert-messages-demo.html";
             driver.Navigate().GoToUrl(testUrl);
             bootstrapAlertsPage = new Bootstrap_Alerts_Page(driver);
-            bootstrapAlertsAssertsPage = new Bootstrap_Alerts_Asserts_Page(driver);
-            wait = new WebDriverWait(driver, TimeSpan.FromSeconds(2));
+            bootstrapAlertsAssertsPage = new Bootstrap_Alerts_Asserts_Page(driver);            
         }
 
         /// <summary>

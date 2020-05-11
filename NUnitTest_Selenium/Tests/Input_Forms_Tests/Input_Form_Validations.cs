@@ -1,58 +1,71 @@
 ﻿using NUnit.Framework;
-using OpenQA.Selenium;
-using OpenQA.Selenium.Support.UI;
+using NUnitTest_Selenium.AssertsPages.Input_Forms_Asserts_Pages;
+using NUnitTest_Selenium.Pages.Inputs_Forms_Pages;
 using System.Threading;
 
 namespace NUnitTest_Selenium.Tests.Input_Forms
 {
     public class Input_Form_Validations : BaseTest
     {
-        IWebElement firstname => driver.FindElement(By.Name("first_name"));
-        IWebElement lastname => driver.FindElement(By.Name("last_name"));
-        IWebElement email => driver.FindElement(By.Name("email"));
-        IWebElement phone => driver.FindElement(By.Name("phone"));
-        IWebElement address => driver.FindElement(By.Name("address"));
-        IWebElement city => driver.FindElement(By.Name("city"));
-        IWebElement state => driver.FindElement(By.Name("state"));
-        IWebElement zip => driver.FindElement(By.Name("zip"));
-        IWebElement website => driver.FindElement(By.Name("website"));
-        IWebElement hosting => driver.FindElement(By.Name("hosting"));
-        IWebElement comment => driver.FindElement(By.Name("comment"));
-        IWebElement sendButton => driver.FindElement(By.CssSelector(".btn"));
+        private Input_Form_Validation_Page validationPage;
+        private Validation_Form_Asserts_Page validationAssertsPage;
 
         [SetUp]
         public void BeforeTests()
         {
             string testUrl = baseUrl + "/input-form-demo.html";
             driver.Navigate().GoToUrl(testUrl);
-        }
+            validationPage = new Input_Form_Validation_Page(driver);
+            validationAssertsPage = new Validation_Form_Asserts_Page(driver);
+        }        
 
         [Test]
-        public void FillForm()
+        public void FillFormTest()
         {
-            firstname.SendKeys("Vesturas");
-            lastname.SendKeys("Stanevicius");
-            email.SendKeys("email@email.com");
-            phone.SendKeys("+370 123 123 123");
-            address.SendKeys("Gatve g.");
-            city.SendKeys("Kaunas");
-            new SelectElement(state).SelectByIndex(5);
-            zip.SendKeys("LT-1213");
-            website.SendKeys("www.website.com");
-            hosting.Click();
-            comment.SendKeys("Komentaras, komentaras.");
-            sendButton.Click();
+            string firstName = "Vesturas";
+            string lastName = "Stanevicius";
+            string email = "email@email.com";
+            string phoneNumber = "+370 123 123 123";
+            string address = "Gatve g.";
+            string city = "Kaunas";
+            int stateNumber = 5;
+            string zipCode = "LT-1213";
+            string website = "www.website.com";
+            //for Hosting "Yes" or "No"
+            string host = "No";
+            string comment = "Komentaras, komentaras.";
+
+            validationPage
+                .FirstNameInput(firstName)
+                .LastNameInput(lastName)
+                .EmailInput(email)
+                .PhoneNumberInput(phoneNumber)
+                .AddressInput(address)
+                .CityInput(city)
+                .SelectState(stateNumber)
+                .ZipCodeInput(zipCode)
+                .WebInput(website)
+                .HostingSelect(host)
+                .CommentInput(comment);
+                
             Thread.Sleep(1000);
 
-            Assert.AreEqual("", firstname.Text);
-            Assert.AreEqual("", lastname.Text);
-            Assert.AreEqual("", email.Text);
-            Assert.AreEqual("", phone.Text);
-            Assert.AreEqual("", address.Text);
-            Assert.AreEqual("", city.Text);
-            Assert.AreEqual("", zip.Text);
-            Assert.AreEqual("", website.Text);
-            Assert.AreEqual("", comment.Text);
+            validationAssertsPage
+                .FirstNameInputCheck(firstName)
+                .LasttNameInputCheck(lastName)
+                .EmailInputCheck(email)
+                .PhoneInputCheck(phoneNumber)
+                .AddressInputCheck(address)
+                .CityInputCheck(city)
+                .StateCheck()
+                .ZipCodeInputCheck(zipCode)
+                .WebsiteInputCheck(website)
+                .CommentCheck(comment);
+        }
+
+        [TearDown]
+        public void AfterTests()
+        {
 
         }
     }

@@ -3,7 +3,7 @@ using NUnitTest_Selenium.AssertsPages.Input_Forms_Asserts_Pages;
 using NUnitTest_Selenium.Pages.Inputs_Forms_Pages;
 using System.Threading;
 
-namespace NUnitTest_Selenium.Tests.Input_Forms
+namespace NUnitTest_Selenium.Tests.Input_Forms_Tests
 {
     public class Input_Form_Validations : BaseTest
     {

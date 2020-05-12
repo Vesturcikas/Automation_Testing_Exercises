@@ -2,7 +2,7 @@
 using NUnitTest_Selenium.Pages;
 using NUnitTest_Selenium.AssertsPages;
 
-namespace NUnitTest_Selenium.Tests.Input_Forms
+namespace NUnitTest_Selenium.Tests.Input_Forms_Tests
 {
     public class Checkbox : BaseTest
     {

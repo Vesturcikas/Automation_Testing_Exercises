@@ -52,8 +52,7 @@ namespace NUnitTest_Selenium.Pages.Inputs_Forms_Pages
         }
 
         public JQuery_Select_Page SelectCountry(string countryName)
-        {
-            //IWebElement selectedCountry =  countryList.FindElement(By.LinkText(countryName));
+        {            
             ReadOnlyCollection<IWebElement> list = countryList.FindElements(By.CssSelector("li"));
             foreach (var item in list)
             {
@@ -63,13 +62,14 @@ namespace NUnitTest_Selenium.Pages.Inputs_Forms_Pages
                     break;
                 }
             }
+            return this;
+        }
 
-
-
-            /*
-            Actions act = new Actions(driver);
-            act.MoveToElement(selectedCountry).Click().Build().Perform();
-            */
+        public JQuery_Select_Page CountrySearchInput(string searchText)
+        {
+            IWebElement searchInput = singleDropDownList.FindElement(By.CssSelector("input[type='search']"));
+            searchInput.Clear();
+            searchInput.SendKeys(searchText);
             return this;
         }
     }

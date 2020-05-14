@@ -1,6 +1,8 @@
 ﻿using NUnit.Framework;
 using NUnitTest_Selenium.AssertsPages.Input_Forms_Asserts_Pages;
 using NUnitTest_Selenium.Pages.Inputs_Forms_Pages;
+using System;
+using System.Collections.Generic;
 using System.Threading;
 
 namespace NUnitTest_Selenium.Tests.Input_Forms_Tests
@@ -42,7 +44,47 @@ namespace NUnitTest_Selenium.Tests.Input_Forms_Tests
             Thread.Sleep(3000);
 
             jQueryPage.SelectCountry(country);
-            Thread.Sleep(5000);            
+            Thread.Sleep(2000);
+            jQueryAssertsPage.IsCountryDisplayed(country);
+        }
+
+        [Test]
+        public void CountrySearchOneLetterTest()
+        {
+            string k = "a";
+            string k1 = "A";
+            List<string> resultList0 = new List<string>();
+            List<string> resultList1 = new List<string>();
+            Random rnd = new Random();
+            int num;
+
+            jQueryPage
+                .CountrySelectClick()
+                .CountrySearchInput(k);
+            Thread.Sleep(3000);
+
+            int n0 = jQueryAssertsPage.CountrySearchResults(k, out resultList0);
+
+            jQueryPage.CountrySearchInput(k1);
+            int n1 = jQueryAssertsPage.CountrySearchResults(k1, out resultList1);
+            Thread.Sleep(3000);
+
+            Assert.AreEqual(n0, n1);
+            Assert.AreEqual(resultList0, resultList1);
+
+            if (n0>1)
+            {
+                num = rnd.Next(0, n0-1);
+                jQueryPage.SelectCountry(resultList0[num]);
+                jQueryAssertsPage.IsCountryDisplayed(resultList0[num]);
+                Thread.Sleep(3000);
+            }
+            else if (n0 == 1)
+            {                
+                jQueryPage.SelectCountry(resultList0[0]);
+                jQueryAssertsPage.IsCountryDisplayed(resultList0[0]);
+                Thread.Sleep(3000);
+            }
         }
 
         [TearDown]

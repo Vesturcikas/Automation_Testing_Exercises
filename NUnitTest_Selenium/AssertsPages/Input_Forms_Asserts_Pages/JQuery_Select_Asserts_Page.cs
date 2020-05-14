@@ -1,11 +1,13 @@
 ﻿using NUnit.Framework;
 using NUnitTest_Selenium.Pages;
 using OpenQA.Selenium;
+using System.Collections.Generic;
 
 namespace NUnitTest_Selenium.AssertsPages.Input_Forms_Asserts_Pages
 {
     public class JQuery_Select_Asserts_Page : BasePage
     {
+        private List<string> originalCountryList = new List<string> { "", "Australia", "Bangladesh", "Denmark", "Hong Kong", "India", "Japan", "Netherlands", "New Zealand", "South Africa", "United States of America"};
         private IWebElement singleDropDownList
         {
             get
@@ -52,6 +54,47 @@ namespace NUnitTest_Selenium.AssertsPages.Input_Forms_Asserts_Pages
         {
             IWebElement countryDisplay = driver.FindElement(By.Id("select2-country-container"));
             Assert.AreEqual(expectedText, countryDisplay.Text);
+        }
+
+        public int CountrySearchResults(string searchText, out List<string> searchResultList)
+        {
+            List<string> actualSearchList = new List<string>();
+            foreach (var item in originalCountryList)
+            {
+                if (item.Contains(searchText))
+                {
+                    actualSearchList.Add(item);
+                }
+                else if (searchText.Length == 1)
+                {                    
+                    if (item.Contains(searchText.ToUpper()))
+                    {
+                        actualSearchList.Add(item);
+                    }
+                    else if (item.Contains(searchText.ToLower()))
+                    {
+                        actualSearchList.Add(item);
+                    }
+                }
+            }
+
+            IReadOnlyCollection<IWebElement> actualElementsList = countryList.FindElements(By.CssSelector("li"));
+            Assert.AreEqual(actualSearchList.Count, actualElementsList.Count);
+
+            foreach (var item in actualSearchList)
+            {
+                foreach (var element in actualElementsList)
+                {
+                    if (item == element.Text)
+                    {
+                        Assert.AreEqual(item, element.Text);
+                        break;
+                    }
+                }
+            }
+
+            searchResultList = actualSearchList;
+            return actualElementsList.Count;
         }
     }
 }

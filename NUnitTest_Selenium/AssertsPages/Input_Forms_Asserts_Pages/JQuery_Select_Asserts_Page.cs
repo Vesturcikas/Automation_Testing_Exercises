@@ -36,6 +36,21 @@ namespace NUnitTest_Selenium.AssertsPages.Input_Forms_Asserts_Pages
                 }
             }
         }
+        private IWebElement countrySearchMessage
+        {
+            get
+            {
+                try
+                {
+                    return countryList.FindElement(By.CssSelector(".select2-results__message"));
+                }
+                catch (NoSuchElementException)
+                {
+                    return null;
+                }
+            }
+        }
+
         public JQuery_Select_Asserts_Page(IWebDriver driver) : base(driver) { }
 
         public void IsSingleDropDownListDisplayed()
@@ -95,6 +110,13 @@ namespace NUnitTest_Selenium.AssertsPages.Input_Forms_Asserts_Pages
 
             searchResultList = actualSearchList;
             return actualElementsList.Count;
+        }
+
+        public void NoCountryMessage()
+        {
+            string expectedText = "No results found";
+            Assert.IsNotNull(countrySearchMessage);
+            Assert.AreEqual(expectedText, countrySearchMessage.Text);
         }
     }
 }

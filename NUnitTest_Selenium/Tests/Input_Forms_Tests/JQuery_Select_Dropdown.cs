@@ -87,6 +87,23 @@ namespace NUnitTest_Selenium.Tests.Input_Forms_Tests
             }
         }
 
+        [Test]
+        public void CountrySearchStringTest()
+        {
+            string testInputText1 = "dl";
+            List<string> resultsList = new List<string>();
+
+            jQueryPage
+                .CountrySelectClick()
+                .CountrySearchInput(testInputText1);
+            Thread.Sleep(3000);
+
+            jQueryAssertsPage.NoCountryMessage();
+            Thread.Sleep(2000);
+        }
+
+
+
         [TearDown]
         public void AfterTests() { }
     }

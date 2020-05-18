@@ -72,5 +72,11 @@ namespace NUnitTest_Selenium.Pages.Inputs_Forms_Pages
             searchInput.SendKeys(searchText);
             return this;
         }
+
+        public JQuery_Select_Page MultiSelectClick()
+        {
+            multipleSelectBox.Click();
+            return this;
+        }
     }
 }

@@ -102,7 +102,13 @@ namespace NUnitTest_Selenium.Tests.Input_Forms_Tests
             Thread.Sleep(2000);
         }
 
-
+        [Test]
+        public void MultiSelectBoxTest()
+        {
+            jQueryPage.MultiSelectClick();
+            Thread.Sleep(5000);
+            jQueryAssertsPage.IsStatesListDisplayed();
+        }
 
         [TearDown]
         public void AfterTests() { }

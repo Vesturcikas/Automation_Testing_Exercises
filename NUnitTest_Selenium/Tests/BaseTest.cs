@@ -12,8 +12,7 @@ namespace NUnitTest_Selenium.Tests
         [SetUp]
         public void BeforeEveryTests()
         {
-            driver = new ChromeDriver();
-            driver.Manage().Window.Maximize();
+            driver = MyDriver.InitDriver(Browser.Chrome);            
             baseUrl = "https://www.seleniumeasy.com/test";             
         }
 

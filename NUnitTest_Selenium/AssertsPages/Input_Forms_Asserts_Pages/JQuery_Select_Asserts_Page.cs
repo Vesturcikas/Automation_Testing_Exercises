@@ -50,6 +50,21 @@ namespace NUnitTest_Selenium.AssertsPages.Input_Forms_Asserts_Pages
                 }
             }
         }
+        private IWebElement statesList
+        {
+            get
+            {
+                try
+                {
+                    return driver.FindElement(By.CssSelector("#select2-43j2-results[aria-hidden='false']"));
+                }
+                catch (NoSuchElementException)
+                {
+                    return null;
+                }
+            }
+        }
+
 
         public JQuery_Select_Asserts_Page(IWebDriver driver) : base(driver) { }
 
@@ -118,5 +133,11 @@ namespace NUnitTest_Selenium.AssertsPages.Input_Forms_Asserts_Pages
             Assert.IsNotNull(countrySearchMessage);
             Assert.AreEqual(expectedText, countrySearchMessage.Text);
         }
+
+        public void IsStatesListDisplayed() 
+        {
+            Assert.IsNotNull(statesList);
+        }
+
     }
 }

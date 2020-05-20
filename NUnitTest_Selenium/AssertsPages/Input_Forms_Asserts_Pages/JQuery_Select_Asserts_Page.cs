@@ -50,13 +50,14 @@ namespace NUnitTest_Selenium.AssertsPages.Input_Forms_Asserts_Pages
                 }
             }
         }
+        
         private IWebElement statesList
         {
             get
             {
                 try
                 {
-                    return driver.FindElement(By.CssSelector("#select2-43j2-results[aria-hidden='false']"));
+                    return driver.FindElement(By.CssSelector("#select2-ngkf-results[aria-expanded='true']"));
                 }
                 catch (NoSuchElementException)
                 {
@@ -64,7 +65,7 @@ namespace NUnitTest_Selenium.AssertsPages.Input_Forms_Asserts_Pages
                 }
             }
         }
-
+        
 
         public JQuery_Select_Asserts_Page(IWebDriver driver) : base(driver) { }
 
@@ -136,6 +137,7 @@ namespace NUnitTest_Selenium.AssertsPages.Input_Forms_Asserts_Pages
 
         public void IsStatesListDisplayed() 
         {
+            //IWebElement statesList = driver.FindElement(By.CssSelector("#select2-ngkf-results"));
             Assert.IsNotNull(statesList);
         }
 

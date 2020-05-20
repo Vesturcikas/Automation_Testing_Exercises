@@ -40,6 +40,22 @@ namespace NUnitTest_Selenium.Pages.Inputs_Forms_Pages
 
         private IWebElement multipleSelectBox => driver
             .FindElement(By.CssSelector(".select2-selection--multiple"));
+
+        private IWebElement statesList
+        {
+            get
+            {
+                try
+                {
+                    return driver.FindElement(By.CssSelector("#select2-ngkf-results"));
+                }
+                catch (NoSuchElementException)
+                {
+                    return null;
+                }
+            }
+        }
+
         private IWebElement disabledValuesDropDownBox => driver
             .FindElement(By.CssSelector("span[aria-labelledby='select2-1rrx-container']"));
 
@@ -76,6 +92,20 @@ namespace NUnitTest_Selenium.Pages.Inputs_Forms_Pages
         public JQuery_Select_Page MultiSelectClick()
         {
             multipleSelectBox.Click();
+            return this;
+        }
+
+        public JQuery_Select_Page SelectState(string state) 
+        {
+            ReadOnlyCollection<IWebElement> list = statesList.FindElements(By.CssSelector("li"));
+            foreach (var item in list)
+            {
+                if (item.Text == state)
+                {
+                    item.Click();
+                    break;
+                }
+            }
             return this;
         }
     }

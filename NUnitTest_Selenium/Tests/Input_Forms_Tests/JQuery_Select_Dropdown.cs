@@ -105,9 +105,12 @@ namespace NUnitTest_Selenium.Tests.Input_Forms_Tests
         [Test]
         public void MultiSelectBoxTest()
         {
+            string state0 = "Georgia";
             jQueryPage.MultiSelectClick();
-            Thread.Sleep(5000);
-            jQueryAssertsPage.IsStatesListDisplayed();
+            Thread.Sleep(2000);
+            //jQueryAssertsPage.IsStatesListDisplayed();
+            jQueryPage.SelectState(state0);
+            Thread.Sleep(2000);
         }
 
         [TearDown]
